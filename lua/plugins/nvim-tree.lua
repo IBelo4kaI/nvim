@@ -1,14 +1,11 @@
 return {
-	"nvim-tree/nvim-tree.lua",
-	lazy = false,
-	config = function()
-		require("nvim-tree").setup({
-			filters = {
-				dotfiles = false, -- Show hidden files (dotfiles)
-			},
-			view = {
-				adaptive_size = true,
-			},
-		})
-	end,
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "s1n7ax/nvim-window-picker",
+    },
+    lazy = false,
 }
