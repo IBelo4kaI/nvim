@@ -13,6 +13,7 @@ return {
 				"css",
 				"dockerfile",
 				"go",
+				"php",
 				"html",
 				"javascript",
 				"json",

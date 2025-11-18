@@ -1,8 +1,6 @@
---- @param lspconfig table The lspconfig module from nvim-lspconfig plugin
 --- @param capabilities table LSP client capabilities (from nvim-cmp)
---- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
+return function(capabilities)
 	local luacheck = require("efmls-configs.linters.luacheck") -- lua linter
 	local stylua = require("efmls-configs.formatters.stylua") -- lua formatter
 	local go_revive = require("efmls-configs.linters.go_revive") -- go linter
@@ -14,8 +12,7 @@ return function(lspconfig, capabilities, on_attach)
 	local shfmt = require("efmls-configs.formatters.shfmt") -- bash formatter
 	local hadolint = require("efmls-configs.linters.hadolint") -- docker linter
 
-	lspconfig.efm.setup({
-		on_attach = on_attach,
+	vim.lsp.config("efm", {
 		capabilities = capabilities,
 		filetypes = {
 			"css",
